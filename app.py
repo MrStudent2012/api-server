@@ -316,8 +316,10 @@ def delete_user(user_id: str):
 @app.get('/health')
 def health_check():
     """Health check endpoint"""
+    # Simulate a bug by adding an unused variable
+    unused_variable = 'This is a bug'
     return jsonify({
-        'status': 'healthy',
+        'status': unused_variable,
         'timestamp': datetime.utcnow().isoformat()
     }), 200
 
